@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/src/css/style.css" />
+
+</head>
+<body>
+  <h1>Dashboard</h1>
+  <button id="add">Добавить задачу</button>
+  <p>Показать задачи как: 
+    <span id="tableBtn">Таблица</span> |
+    <span id="cardBtn">Плитка</span>
+  </p>
+  
+
+  <!-- 2 -->
+  
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span id="editModalClose" class="close">&times;</span>
+      <h2>Изменить задачу</h2>
+      <form id="editTaskForm">
+        <label for="editTaskTitle">Заголовок:</label>
+        <input type="text" id="editTaskTitle" required><br>
+
+        <label for="editTaskDesc">Описание:</label>
+        <textarea id="editTaskDesc" required></textarea><br>
+
+        <label for="editTaskTime">Время:</label>
+        <input type="time" id="editTaskTime" required><br>
+
+        <label for="editTaskDate">Дата:</label>
+        <input type="date" id="editTaskDate" required><br>
+
+        <label for="editTaskStatus">Статус:</label>
+        <select id="editTaskStatus">
+          <option value="done">Готово</option>
+          <option value="notdone">Не выполнено</option>
+          <option value="progress">В процессе</option>
+        </select><br>
+
+        <button type="submit">Изменить</button>
+        <button type="button" id="deleteTaskBtn" class="delete-btn">Удалить</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="tasks"></div>
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
